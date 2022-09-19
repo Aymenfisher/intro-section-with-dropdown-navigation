@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 20px;
     display: grid;
-    grid-template: 10% 85% 5%/ 1fr;
+    grid-template: 10% 90%/ 1fr;
     align-items: center;
     justify-content: center;
     gap: 15%;
@@ -193,8 +193,6 @@ main {
 
 footer{
     font-size: .5rem;
-    position: absolute;
-    bottom: 5px;
     text-align: left;
 }
 /****** Media Queries *********/
