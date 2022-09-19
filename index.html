@@ -13,19 +13,37 @@
 <body>
   <header>
     <img src="./images/logo.svg" id="logo" alt="snap">
+    <img src="./images/icon-menu.svg" id="open-img" style="display: none;">
     <nav>
-      <ul class="nav-items">
-        <li>Features <img class="arrow down" src="./images/icon-arrow-up.svg"></li>
+      <img src="./images/icon-close-menu.svg" id="close-img" style="display: none">
+      <div class="nav-items">
+        <div class="dropdown nav-item">
+          <button id="features-btn">Features <img class="arrow down" src="./images/icon-arrow-up.svg"></button>
+          
+            <div class="dropdown-menu dropdown-1">
+              <div class=dropdown-item><img src="images/icon-todo.svg"><span>Todo List</span></div>
+              <div class=dropdown-item><img src="images/icon-calendar.svg"><span>Calendar</span></div> 
+              <div class=dropdown-item><img src="images/icon-reminders.svg"><span>Reminders</span></div> 
+              <div class=dropdown-item><img src="images/icon-planning.svg"><span>Planning</span></div> 
+            </div>
+        </div>
   
-        <li>Company <img class="arrow down" src="./images/icon-arrow-up.svg"></li>
+        <div class="dropdown nav-item">
+          <button id="company-btn">Company <img class="arrow down" src="./images/icon-arrow-up.svg"></button>
+          <div class="dropdown-menu dropdown-2">
+            <div class=dropdown-item>History </div>
+            <div class=dropdown-item>Our Team</div> 
+            <div class=dropdown-item>Blog</div>  
+          </div>
+        </div>
   
-        <li> Careers</li>
+        <button id="careers-btn" class="nav-item">Careers</button>
   
-        <li> About</li>
-      </ul>
+        <button id="about-btn" class="nav-item">About</button>
+      </div>
       <div class="login-btns">
-        <p id="login">Login</p>
-        <button id="register">Register</button>
+        <button id="login-btn">Login</button>
+        <button id="register-btn">Register</button>
       </div>
     </nav>
 
@@ -52,7 +70,9 @@
     </div>
 
     <div class="big-image">
-      <img src="./images/image-hero-desktop.png">
+      <img src="./images/image-hero-mobile.png" id="img-mobile" style="display: none;">
+      <img src="./images/image-hero-desktop.png" id="img-desktop">
+
     </div>
   </main>
 </body>

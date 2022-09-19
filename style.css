@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
-:root{
+:root {
     --almost-white: hsl(0, 0%, 98%);
     --medium-gray: hsl(0, 0%, 41%);
     --almost-black: hsl(0, 0%, 8%);
     --font-space-grotesk: 'Space Grotesk', sans-serif;
 }
 
-html,body{
+html,
+body {
     font-size: 18px;
     font-family: var(--font-space-grotesk);
     width: 100vw;
@@ -15,84 +16,111 @@ html,body{
     background-color: var(--almost-white);
 }
 
-body{
-    width: 100%;
-    height: 100%;
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template: 10% 90% / 1fr;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 15%;
 }
 
 /* ---------------Navigation BAR ---------------------*/
-header{
+header {
     width: 100%;
     display: grid;
     grid-template: 1fr / 10% 90%;
-    color: var(--medium-gray)
+    color: var(--medium-gray);
 }
 
-#logo{
+#logo {
     align-self: center;
-    height: 2rem;
 }
 
-nav{
+nav {
     display: inline-flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    margin-bottom: 8px;
 }
 
 
-.nav-items{
-    height: 2rem;
-    list-style: none;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.nav-items {
+    display: flex;
     gap: 15px;
-    justify-content: center;
+    align-items: baseline;
 }
 
-
-#login:hover,li:hover{
-    cursor: pointer;
-    color:var(--almost-black);
-}
-
-.login-btns{
-    align-self: start;
-    display: grid;
-    grid-template: 1fr / 1fr 1fr;
-}
-
-button{
+button {
     background: none;
-    border: 2px solid var(--medium-gray);
-    border-radius: 15px;
-    color: var(--medium-gray);
     font-size: 1rem;
     font-family: var(--font-space-grotesk);
+    color: var(--medium-gray);
 }
-button:hover{
+
+.nav-items button,
+#login-btn {
+    border: none;
+}
+
+.login-btns {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+#register-btn {
+    font-size: 16px;
+    padding: 10px 15px;
+    border: 2px solid var(--medium-gray);
+    border-radius: 10px;
+}
+
+#login-btn {
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
     color: var(--almost-black);
     border-color: var(--almost-black);
-    cursor: pointer;
 }
 
-#login{
-    border: none;
-    justify-self: center;
-}
-#register{
-    box-sizing: content-box;
-    padding: 5px 20px;
+/*Styling Dropdown menus */
+
+.dropdown {
+    position: relative;
 }
 
+.dropdown-menu {
+    padding: 15px 20px;
+    position: absolute;
+    border-radius: 10px;
+    top: calc(100% + .5rem);
+    background-color: white;
+    box-shadow: 0px 4px 10px 0px rgb(201, 200, 200);
+    display: grid;
+    gap: 10px;
+}
 
+.dropdown-item {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    white-space: nowrap;
+    gap: 10px;
+}
+
+.dropdown-1 {
+    right: 0;
+}
+
+.dropdown-2 {
+    left: 0;
+}
 
 
 /* -------------- end navigation bar ------------- */
@@ -104,14 +132,11 @@ main {
     width: 90%;
     justify-self: center;
     display: grid;
-    grid-template: 90% / 2fr 5% 2fr;
+    grid-template: 70% / 1fr 1fr;
 }
 
-.big-image{
-    grid-area: 1 / 3 / 2 / span 1 ;
-}
 
-.big-image img{
+.big-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -119,44 +144,43 @@ main {
 
 /*main contetnt informations*/
 
-.main-content{
+.main-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.main-content h1{
+.main-content h1 {
     font-weight: 700;
-    font-size: max(6vw,2rem);
+    font-size: max(4vw, 2rem);
     margin-bottom: 0;
 }
 
-.main-content p{
-    font-size: max(2vw,1rem);
-    line-break:normal;
+.main-content p {
+    font-size: max(2vw, 1rem);
     color: var(--medium-gray);
-    font-weight: 500;
 }
 
 
-.main-content #learn-more{
+.main-content #learn-more {
     width: 40%;
     height: 60px;
     background-color: var(--almost-black);
     color: white;
     font-family: var(--font-space-grotesk);
+    border-radius: 10px;
     border: none;
 }
 
-#learn-more:hover{
+#learn-more:hover {
     cursor: pointer;
     background-color: var(--almost-white);
     border: 1px solid var(--almost-black);
-    color:var(--almost-black);
+    color: var(--almost-black);
     font-weight: 700;
 }
 
-.main-content .partners-logos{
+.main-content .partners-logos {
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -164,4 +188,193 @@ main {
 }
 
 
+/****** Media Queries *********/
 
+/******* Mobile View **********/
+
+@media screen and (max-width:1000px) {
+
+    /* in general */
+    body{
+        gap: 0;
+    }
+    /* Header */
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #open-img{
+        display: grid !important;
+        justify-self: end;
+    }
+
+    nav {
+        position: absolute;
+        height: 100vh;
+        width: 60vw;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: var(--almost-white);
+        padding: 15px;
+        gap: 10%;
+        z-index: 1;
+        box-shadow: 0px 0px 100rem 100rem hsl(0, 0%, 8%,.8);
+    }
+
+    #close-img {
+        display: flex !important;
+        align-self: flex-end;
+    }
+
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: baseline;
+    }
+
+    .login-btns {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    #register-btn {
+        font-size: 1rem;
+        padding: 10px 100%;
+    }
+
+    #login-btn {
+        font-size: 1rem;
+    }
+
+    /*Styling Dropdown menus */
+
+    .dropdown-menu {
+        position: relative;
+        border-radius: 10px;
+        background-color: var(--almost-white);
+        box-shadow: none;
+    }
+
+    .dropdown-item {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        align-items: center;
+        white-space: nowrap;
+        gap: 10px;
+    }
+
+    .dropdown-1,
+    .dropdown-2 {
+        left: 25%;
+        top: 10%;
+        margin-bottom: 10%;
+    }
+
+    /* -------------- end navigation bar ------------- */
+
+    /* ------------ Main Content ------------------- */
+
+    main {
+        position: relative;
+        max-height: 100%;
+        width: 100%;
+        justify-self: center;
+        display: grid;
+        grid-template:  40% 50% / 100%;
+    }
+
+    .big-image{
+        justify-self: center;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .big-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    #img-desktop{
+        display: none;
+    }
+    #img-mobile{
+        display: grid !important;
+    }
+
+    /*main contetnt informations*/
+
+    .main-content {
+        grid-area: 2 / 1 / 3 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-content h1 br{
+        display: none !important;
+    }
+
+    .main-content h1 {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+
+    .main-content p {
+        text-align: center;
+        font-size: 1rem;
+        color: var(--medium-gray);
+        width: 80%;
+    }
+
+
+    .main-content #learn-more {
+        width: max(250px,40%);
+        min-height: 60px;
+        background-color: var(--almost-black);
+        color: white;
+        font-family: var(--font-space-grotesk);
+        border-radius: 10px;
+        border: none;
+    }
+
+    #learn-more:hover {
+        cursor: pointer;
+        background-color: var(--almost-white);
+        border: 1px solid var(--almost-black);
+        color: var(--almost-black);
+        font-weight: 700;
+    }
+
+    .main-content .partners-logos {
+        min-width: 300px;
+        margin-top: 20px;
+        display: grid;
+        grid-template: 100% / repeat(4, 1fr);
+        justify-content: center;
+        justify-items: center;
+        gap: 5px;
+    }
+
+    .partners-logos *{
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    html{
+        font-size: 16px;
+    }
+}
