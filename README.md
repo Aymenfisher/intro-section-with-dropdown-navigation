@@ -29,16 +29,16 @@ Users should be able to:
 ### Screenshots
 ### Desktop: 
 ![Desktop 1](./screenshots/desktop-1.png)
-![Desktop 2](./screenshots/desktop-2.png)
-![Mobile 1](./screenshots/mobile-1.png)
-![Mobile 2](./screenshots/mobile-2.png)
-![Mobile 3](./screenshots/mobile-3.png)
+![Desktop 2](./screenshots/desktop-2.PNG)
+![Mobile 1](./screenshots/mobile-1.PNG)
+![Mobile 2](./screenshots/mobile-2.PNG)
+![Mobile 3](./screenshots/mobile-3.PNG)
 
 
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-with-pure-html-css-and-dom-OswInH3AVI)
 - Live Site URL: [Live site](https://aymenfisher.github.io/intro-section-with-dropdown-navigation)
 
 ## My process
