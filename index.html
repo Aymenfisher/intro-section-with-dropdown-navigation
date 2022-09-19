@@ -6,6 +6,7 @@
   <link href="./style.css" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="./main.js" defer></script>
   
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
@@ -19,8 +20,7 @@
       <div class="nav-items">
         <div class="dropdown nav-item">
           <button id="features-btn">Features <img class="arrow down" src="./images/icon-arrow-up.svg"></button>
-          
-            <div class="dropdown-menu dropdown-1">
+            <div class="dropdown-menu" id="dropdown-1">
               <div class=dropdown-item><img src="images/icon-todo.svg"><span>Todo List</span></div>
               <div class=dropdown-item><img src="images/icon-calendar.svg"><span>Calendar</span></div> 
               <div class=dropdown-item><img src="images/icon-reminders.svg"><span>Reminders</span></div> 
@@ -30,7 +30,7 @@
   
         <div class="dropdown nav-item">
           <button id="company-btn">Company <img class="arrow down" src="./images/icon-arrow-up.svg"></button>
-          <div class="dropdown-menu dropdown-2">
+          <div class="dropdown-menu" id="dropdown-2">
             <div class=dropdown-item>History </div>
             <div class=dropdown-item>Our Team</div> 
             <div class=dropdown-item>Blog</div>  
@@ -75,5 +75,11 @@
 
     </div>
   </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/Aymenfisher">Aymen Boudabia</a>.
+    </div>
+  </footer>
 </body>
 </html>

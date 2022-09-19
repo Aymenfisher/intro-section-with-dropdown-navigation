@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 20px;
     display: grid;
-    grid-template: 10% 90% / 1fr;
+    grid-template: 10% 85% 5%/ 1fr;
     align-items: center;
     justify-content: center;
     gap: 15%;
@@ -104,6 +104,7 @@ button:hover {
     box-shadow: 0px 4px 10px 0px rgb(201, 200, 200);
     display: grid;
     gap: 10px;
+    display: none; /* will be changed onclick */
 }
 
 .dropdown-item {
@@ -113,12 +114,15 @@ button:hover {
     white-space: nowrap;
     gap: 10px;
 }
-
-.dropdown-1 {
+.dropdown-item:hover{
+    color: var(--almost-black);
+    cursor: pointer;
+}
+#dropdown-1 {
     right: 0;
 }
 
-.dropdown-2 {
+#dropdown-2 {
     left: 0;
 }
 
@@ -187,7 +191,9 @@ main {
     justify-content: space-between;
 }
 
-
+footer{
+    font-size: 16px;
+}
 /****** Media Queries *********/
 
 /******* Mobile View **********/
@@ -200,6 +206,7 @@ main {
     }
     /* Header */
     header{
+        align-self: start;
         display: flex;
         justify-content: space-between;
     }
@@ -208,28 +215,36 @@ main {
         display: grid !important;
         justify-self: end;
     }
+    #open-img:hover{
+        cursor: pointer;
+    }
 
     nav {
         position: absolute;
         height: 100vh;
         width: 60vw;
-        right: 0;
+        right: -100%;
         top: 0;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         background-color: var(--almost-white);
-        padding: 15px;
+        padding: 20px;
         gap: 10%;
         z-index: 1;
-        box-shadow: 0px 0px 100rem 100rem hsl(0, 0%, 8%,.8);
+        transition: right 350ms ease-in 0ms , box-shadow 350ms ease-in 0ms;
     }
 
     #close-img {
         display: flex !important;
         align-self: flex-end;
     }
+    #close-img:hover{
+        cursor: pointer;
+    }
+
+
 
     .nav-items {
         display: flex;
@@ -273,8 +288,8 @@ main {
         gap: 10px;
     }
 
-    .dropdown-1,
-    .dropdown-2 {
+    #dropdown-1,
+    #dropdown-2 {
         left: 25%;
         top: 10%;
         margin-bottom: 10%;
