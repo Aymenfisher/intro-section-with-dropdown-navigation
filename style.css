@@ -192,7 +192,10 @@ main {
 }
 
 footer{
-    font-size: 16px;
+    font-size: .5rem;
+    position: absolute;
+    bottom: 5px;
+    text-align: left;
 }
 /****** Media Queries *********/
 
@@ -220,7 +223,7 @@ footer{
     }
 
     nav {
-        position: absolute;
+        position: fixed;
         height: 100vh;
         width: 60vw;
         right: -100%;
@@ -231,7 +234,7 @@ footer{
         align-items: flex-start;
         background-color: var(--almost-white);
         padding: 20px;
-        gap: 10%;
+        gap: 10px;
         z-index: 1;
         transition: right 350ms ease-in 0ms , box-shadow 350ms ease-in 0ms;
     }
